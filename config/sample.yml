@@ -5,5 +5,5 @@ logging:
 
 slackBotConfig:
   # Don't expose, keep them private
-  botToken: "<YOUR BOT TOKEN>"
-  signingSecret: "<YOUR SIGN SECRET>"
+  botToken: ${SLACK_BOT_TOKEN} #"<YOUR BOT TOKEN>"
+  signingSecret: ${SLACK_SIGNING_SECRET} #"<YOUR SIGN SECRET>"

@@ -8,6 +8,8 @@ import com.hellobot.ai.resources.SlackBotResource;
 import com.slack.api.app_backend.SlackSignature;
 import com.slack.api.bolt.App;
 import com.slack.api.bolt.AppConfig;
+import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
+import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Bootstrap;
 import io.dropwizard.core.setup.Environment;
@@ -27,6 +29,12 @@ public class HelloBotApplication extends Application<HelloBotConfiguration> {
     @Override
     public void initialize(final Bootstrap<HelloBotConfiguration> bootstrap) {
         // TODO: application initialization
+        // Enable variable substitution with environment variables
+        bootstrap.setConfigurationSourceProvider(
+                new SubstitutingSourceProvider(
+                        bootstrap.getConfigurationSourceProvider(),
+                        new EnvironmentVariableSubstitutor())
+        );
     }
 
     @Override
