@@ -9,6 +9,7 @@ target/
 build/
 logs/
 #files
+config/local.yml
 .checkstyle
 .classpath
 .project

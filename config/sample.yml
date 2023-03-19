@@ -1,0 +1,9 @@
+logging:
+  level: INFO
+  loggers:
+    com.hellobot.ai: DEBUG
+
+slackBotConfig:
+  # Don't expose, keep them private
+  botToken: "<YOUR BOT TOKEN>"
+  signingSecret: "<YOUR SIGN SECRET>"
